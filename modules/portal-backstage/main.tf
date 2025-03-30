@@ -21,7 +21,7 @@ resource "humanitec_value" "backstage_github_app_client_id" {
   key         = "GITHUB_APP_CLIENT_ID"
   description = ""
   secret_ref  = var.github_app_client_id_ref
-  is_secret   = true
+  is_secret   = false
 }
 
 resource "humanitec_value" "backstage_github_app_client_secret" {
@@ -29,7 +29,7 @@ resource "humanitec_value" "backstage_github_app_client_secret" {
   key         = "GITHUB_APP_CLIENT_SECRET"
   description = ""
   secret_ref  = var.github_app_client_secret_ref
-  is_secret   = true
+  is_secret   = false
 }
 
 resource "humanitec_value" "backstage_github_app_private_key" {
@@ -37,7 +37,7 @@ resource "humanitec_value" "backstage_github_app_private_key" {
   key         = "GITHUB_APP_PRIVATE_KEY"
   description = ""
   secret_ref  = var.github_app_private_key_ref
-  is_secret   = true
+  is_secret   = false
 }
 
 resource "humanitec_value" "backstage_github_app_webhook_secret" {
@@ -45,7 +45,7 @@ resource "humanitec_value" "backstage_github_app_webhook_secret" {
   key         = "GITHUB_APP_WEBHOOK_SECRET"
   description = ""
   secret_ref  = var.github_webhook_secret_ref
-  is_secret   = true
+  is_secret   = false
 }
 
 resource "humanitec_value" "backstage_humanitec_org" {
@@ -61,7 +61,7 @@ resource "humanitec_value" "backstage_humanitec_token" {
   key         = "HUMANITEC_TOKEN"
   description = ""
   secret_ref  = var.humanitec_ci_service_user_token_ref
-  is_secret   = true
+  is_secret   = false
 }
 
 resource "humanitec_value" "backstage_cloud_provider" {
