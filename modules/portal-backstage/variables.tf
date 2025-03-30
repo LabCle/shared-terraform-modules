@@ -1,3 +1,5 @@
+# shared-terraform-modules/modules/portal-backstage/variables.tf
+
 variable "cloud_provider" {
   description = "Used cloud provider. Possible values: aws, azure, gcp"
   type        = string
@@ -13,14 +15,9 @@ variable "humanitec_app_id" {
   type        = string
 }
 
-variable "humanitec_ci_service_user_token_ref" {
-  description = "Humanitec CI Service User Token (Secret Store reference)"
-  type = object({
-    ref     = optional(string)
-    store   = optional(string)
-    value   = optional(string)
-    version = optional(string)
-  })
+variable "humanitec_token" {
+  description = "Humanitec CI Service User Token"
+  type        = string
 }
 
 variable "github_org_id" {
@@ -28,24 +25,14 @@ variable "github_org_id" {
   type        = string
 }
 
-variable "github_app_client_id_ref" {
-  description = "GitHub App Client ID (Secret Store reference)"
-  type = object({
-    ref     = optional(string)
-    store   = optional(string)
-    value   = optional(string)
-    version = optional(string)
-  })
+variable "github_app_client_id" {
+  description = "GitHub App Client ID"
+  type        = string
 }
 
-variable "github_app_client_secret_ref" {
-  description = "GitHub App Client Secret (Secret Store reference)"
-  type = object({
-    ref     = optional(string)
-    store   = optional(string)
-    value   = optional(string)
-    version = optional(string)
-  })
+variable "github_app_client_secret" {
+  description = "GitHub App Client Secret"
+  type        = string
 }
 
 variable "github_app_id" {
@@ -53,24 +40,14 @@ variable "github_app_id" {
   type        = string
 }
 
-variable "github_webhook_secret_ref" {
-  description = "GitHub Webhook Secret (Secret Store reference)"
-  type = object({
-    ref     = optional(string)
-    store   = optional(string)
-    value   = optional(string)
-    version = optional(string)
-  })
+variable "github_webhook_secret" {
+  description = "GitHub Webhook Secret"
+  type        = string
 }
 
-variable "github_app_private_key_ref" {
-  description = "GitHub App Private Key (Secret Store reference)"
-  type = object({
-    ref     = optional(string)
-    store   = optional(string)
-    value   = optional(string)
-    version = optional(string)
-  })
+variable "github_app_private_key" {
+  description = "GitHub App Private Key"
+  type        = string
 }
 
 variable "backstage_template_owner" {
@@ -85,8 +62,6 @@ variable "backstage_template_repository" {
   default     = "backstage"
 }
 
-# Required as Azure doesn't support wildcards in scopes https://github.com/Azure/azure-workload-identity/issues/373
-# More details in https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#customizing-the-token-claims
 variable "backstage_repo_custom_claim_keys" {
   description = "Custom claim keys for the OIDC subject claim customization template"
   type        = list(string)
