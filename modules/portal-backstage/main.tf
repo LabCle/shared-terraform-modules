@@ -4,64 +4,88 @@ resource "humanitec_value" "backstage_github_org_id" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_ORG_ID"
   description = "GitHub Organization"
-  value       = var.github_org_id
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_org_id"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_github_app_id" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_ID"
   description = "GitHub App ID"
-  value       = var.github_app_id
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_app_id"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_github_app_client_id" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_CLIENT_ID"
-  description = ""
-  value       = var.github_app_client_id
-  is_secret   = true
+  description = "GitHub App Client ID"
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_app_client_id"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_github_app_client_secret" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_CLIENT_SECRET"
   description = "GitHub App Client Secret"
-  value       = var.github_app_client_secret
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_app_client_secret"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_github_app_private_key" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_PRIVATE_KEY"
   description = "GitHub App Private Key"
-  value       = var.github_app_private_key
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_app_private_key"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_github_app_webhook_secret" {
   app_id      = var.humanitec_app_id
   key         = "GITHUB_APP_WEBHOOK_SECRET"
   description = "GitHub Webhook Secret"
-  value       = var.github_webhook_secret
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "github_webhook_secret"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_humanitec_org" {
   app_id      = var.humanitec_app_id
   key         = "HUMANITEC_ORG_ID"
   description = "Humanitec Org ID"
-  value       = var.humanitec_org_id
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "humanitec_org_id"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_humanitec_token" {
   app_id      = var.humanitec_app_id
   key         = "HUMANITEC_TOKEN"
   description = "Humanitec Token"
-  value       = var.humanitec_token
-  is_secret   = true
+  secret_ref = {
+    store = "gcp-secret-store-2"
+    ref   = "humanitec_token"
+  }
+  is_secret = true
 }
 
 resource "humanitec_value" "backstage_cloud_provider" {
